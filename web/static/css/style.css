@@ -1,15 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
 :root {
+
 }
 
 body {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(87, 117, 78);
+  color: black;
+  max-width: 1000px;
+  font-family: 'Roboto';
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#title {
+  font-family: 'Patua One';
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 90%;
+}
+
+#title-one {
+  text-align: left;
+}
+
+#title-two {
+  font-size: 6rem;
+  line-height: 90%;
+}
+
+#title-three{
+  text-align: right;
+}
+
+#emoji-title {
+  display: inline-flex;
+  margin-top: 50px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
+}
+
+#messages > * + * {
+  margin: 1rem 0;
 }
 
 .message {
+  background-color: aliceblue;
+  border-radius: 5px;
 }
 .message-text {
 }
 .message-author {
 }
 .message-date {
+}
+
+textarea {
+  resize: none;
+}
+
+@media screen and (min-width: 320px) {
+}
+@media screen and (min-width: 680px) {
+}
+@media screen and (min-width: 1024px) {
 }

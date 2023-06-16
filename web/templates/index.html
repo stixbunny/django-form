@@ -1,19 +1,52 @@
-{% extends 'base.html' %}
-{% block content %}
-<h1>Mensajes</h1>
-{% for message in messages %}
-<div class="message">
-  <div class="message-text">{{message.text}}</div>
-  <div class="message-author">{{message.author}}</div>
-  <div class="message-date">{{message.pub_date}}</div>
-</div>
-{% endfor %}
-<div class="input">
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static './css/style.css' %}">
+  <title>Mensajes</title>
+</head>
+<body>
+	<main>
+		<section id="title">
+			<span id="title-one">Añade tu</span>
+			<span id="title-two">MENSAJE</span>
+			<span id="title-three">mas abajo 👇</span>
+		</section>
+		<section id="messages">
+			{% for message in messages %}
+			<div class="message">
+				<div class="message-text">{{message.text}}</div>
+				{% if message.author %}
+					<div class="message-author">{{message.author}}</div>
+				{% else %}
+					<div class="message-author anon">Anónimo</div>
+				{% endif %}
+				<div class="message-date">{{message.pub_date}}</div>
+			</div>
+			{% endfor %}
+		</section>
+		
+	</main>
+	<footer>
+		<section>
+			<form action="" method="post">
+			{% csrf_token %}
+			{% for field in form %}
+				<div class="field-wrapper">
+					{{field.errors}}
+					{{field.label_tag}}
+					{{field}}
+				</div>
+			{% endfor %}
+				<button>Enviar</button>
+			</form>
+		</section>
+		<section>
+			Una cosilla de <a href="https://github.com/stixbunny">stixbunny</a>.
+		</section>
+	</footer>
+</body>
+</html>
 
-</div>
-<form action="" method="post">
-	{% csrf_token %}
-	{{form.as_p}}
-	<button>Enviar</button>
-</form>
-{% endblock %}
