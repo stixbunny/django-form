@@ -2,10 +2,10 @@
 {% block content %}
 <h1>Mensajes</h1>
 {% for message in messages %}
-<div>
-  <div>{{message.text}}</div>
-  <div>{{message.author}}</div>
-  <div>{{message.pub_date}}</div>
+<div class="message">
+  <div class="message-text">{{message.text}}</div>
+  <div class="message-author">{{message.author}}</div>
+  <div class="message-date">{{message.pub_date}}</div>
 </div>
 {% endfor %}
 <form action="" method="post">

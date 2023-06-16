@@ -14,4 +14,3 @@ def form(request):
 		else:
 				form = MessageForm()
 		return render(request, "index.html", {"form": form, "messages": messages})
-
