@@ -8,12 +8,14 @@
   <title>Mensajes</title>
 </head>
 <body>
-	<main>
+	<header>
 		<section id="title">
 			<span id="title-one">Añade tu</span>
 			<span id="title-two">MENSAJE</span>
 			<span id="title-three">mas abajo 👇</span>
 		</section>
+	</header>
+	<main>
 		<section id="messages">
 			{% for message in messages %}
 			<div class="message">
@@ -24,7 +26,15 @@
 				{% else %}
 					<div class="message-author anon">Anónimo</div>
 				{% endif %}
-					<div class="message-date">{{message.pub_date}}</div>
+					<div class="message-date">
+					{% if message.is_within_a_day %}
+					{{message.pub_date|time:"H:i"}}
+					{% elif message.is_within_a_week %}
+					{{message.pub_date|date:"D"}} {{message.pub_date|time:"H:i"}}
+					{% else %}
+					{{message.pub_date|date:"SHORT_DATE_FORMAT"}}
+					{% endif %}	
+					</div>
 				</div>
 			</div>
 			{% endfor %}

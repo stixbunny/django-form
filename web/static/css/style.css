@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patua+One&display=swap");
 
 :root {
-
 }
 
 body {
@@ -12,10 +11,14 @@ body {
   background-color: rgb(87, 117, 78);
   color: black;
   max-width: 1000px;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
 
-main{
+header {
+  margin: 1rem 0 2rem 0;
+}
+
+main {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -24,7 +27,7 @@ main{
 }
 
 #title {
-  font-family: 'Patua One';
+  font-family: "Patua One";
   font-size: 4rem;
   display: flex;
   flex-direction: column;
@@ -38,9 +41,10 @@ main{
 #title-two {
   font-size: 6rem;
   line-height: 90%;
+  text-align: center;
 }
 
-#title-three{
+#title-three {
   text-align: right;
 }
 
@@ -54,23 +58,29 @@ main{
 }
 
 .message {
+  text-align: justify;
   background-color: aliceblue;
   border-radius: 5px;
   padding: 0.5rem;
+  display: grid;
+  gap: 0.5rem;
 }
 
-.message-info{
+.message-info {
   display: flex;
   justify-content: end;
+  align-items: center;
+  gap: 1rem;
 }
 
 .message-text {
-
+  font-size: 1.1rem;
 }
 .message-author {
-
+  font-size: 1rem;
 }
 .message-date {
+  font-size: 0.8rem;
 }
 
 .anon {
