@@ -18,16 +18,17 @@
 			{% for message in messages %}
 			<div class="message">
 				<div class="message-text">{{message.text}}</div>
+				<div class="message-info">
 				{% if message.author %}
 					<div class="message-author">{{message.author}}</div>
 				{% else %}
 					<div class="message-author anon">Anónimo</div>
 				{% endif %}
-				<div class="message-date">{{message.pub_date}}</div>
+					<div class="message-date">{{message.pub_date}}</div>
+				</div>
 			</div>
 			{% endfor %}
 		</section>
-		
 	</main>
 	<footer>
 		<section>

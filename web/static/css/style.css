@@ -44,15 +44,8 @@ main{
   text-align: right;
 }
 
-#emoji-title {
-  display: inline-flex;
-  margin-top: 50px;
-}
-
-footer {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+#messages {
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -63,12 +56,33 @@ footer {
 .message {
   background-color: aliceblue;
   border-radius: 5px;
+  padding: 0.5rem;
 }
+
+.message-info{
+  display: flex;
+  justify-content: end;
+}
+
 .message-text {
+
 }
 .message-author {
+
 }
 .message-date {
+}
+
+.anon {
+  color: lightslategray;
+  font-style: italic;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 auto;
 }
 
 textarea {
