@@ -8,15 +8,15 @@
   <title>Mensajes</title>
 </head>
 <body>
-	<header>
-		<section id="title">
-			<span id="title-one">Añade tu</span>
-			<span id="title-two">MENSAJE</span>
-			<span id="title-three">mas abajo 👇</span>
-		</section>
-	</header>
-	<main>
-		<section id="messages">
+	<div class="box">
+		<header>
+			<section id="title">
+				<span id="title-one">Añade tu</span>
+				<span id="title-two">MENSAJE</span>
+				<span id="title-three">mas abajo 👇</span>
+			</section>
+		</header>
+		<main>
 			{% for message in messages %}
 			<div class="message">
 				<div class="message-text">{{message.text}}</div>
@@ -38,26 +38,26 @@
 				</div>
 			</div>
 			{% endfor %}
-		</section>
-	</main>
-	<footer>
-		<section>
-			<form action="" method="post">
-			{% csrf_token %}
-			{% for field in form %}
-				<div class="field-wrapper">
-					{{field.errors}}
-					{{field.label_tag}}
-					{{field}}
-				</div>
-			{% endfor %}
-				<button>Enviar</button>
-			</form>
-		</section>
-		<section>
-			Una cosilla de <a href="https://github.com/stixbunny">stixbunny</a>.
-		</section>
-	</footer>
+		</main>
+		<footer>
+			<section>
+				<form action="" method="post">
+				{% csrf_token %}
+				{% for field in form %}
+					<div class="field-wrapper">
+						{{field.errors}}
+						{{field.label_tag}}
+						{{field}}
+					</div>
+				{% endfor %}
+					<button>Enviar</button>
+				</form>
+			</section>
+			<section>
+				Una cosilla de <a href="https://github.com/stixbunny">stixbunny</a>.
+			</section>
+		</footer>
+	</div>
 </body>
 </html>
 

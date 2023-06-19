@@ -5,7 +5,7 @@ from django.http import HttpResponseRedirect
 
 
 def form(request):
-    messages = Message.objects.all()
+    messages = Message.objects.all().order_by("-pub_date")
     if request.method == "POST":
         form = MessageForm(request.POST)
         if form.is_valid():

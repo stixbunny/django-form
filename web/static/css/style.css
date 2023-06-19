@@ -11,19 +11,20 @@ body {
   background-color: rgb(87, 117, 78);
   color: black;
   max-width: 1000px;
+  height: 100dvh;
   font-family: "Roboto";
 }
 
-header {
-  margin: 1rem 0 2rem 0;
-}
-
-main {
+.box {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  max-width: 500px;
-  margin: 0 auto;
+  gap: 1rem;
+  height: 100%;
+}
+
+header {
+  margin: 1rem 0 1rem 0;
+  flex: 0 1 auto;
 }
 
 #title {
@@ -48,19 +49,26 @@ main {
   text-align: right;
 }
 
-#messages {
-  max-width: 80%;
+main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column-reverse;
+  gap: 1rem;
+  max-width: min(80%, 500px);
+  overflow-y: auto;
   margin: 0 auto;
 }
 
-#messages > * + * {
-  margin: 1rem 0;
-}
+/* main > * + * {
+  margin: 1rem 1rem;
+} */
 
 .message {
   text-align: justify;
   background-color: aliceblue;
   border-radius: 5px;
+  margin-left: 1rem;
+  margin-right: 1rem;
   padding: 0.5rem;
   display: grid;
   gap: 0.5rem;
@@ -90,14 +98,54 @@ main {
 
 footer {
   display: flex;
+  flex: 0 1 auto;
   flex-direction: column;
-  text-align: center;
   margin: 0 auto;
+  gap: 1rem;
+  max-width: 500px;
+  /* height: fit-content; */
+}
+
+form {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0 0.5rem 0 0.5rem;
+}
+
+form label {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.field-wrapper {
+  display: grid;
 }
 
 textarea {
   resize: none;
+  font-family: 'Roboto';
 }
+
+input, textarea, button {
+  border-radius: 5px;
+}
+
+button {
+  width: fit-content;
+  justify-self: right;
+}
+
+footer > section:last-child {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+  color: rgb(17, 17, 17);
+  margin-bottom: 1rem;
+}
+
 
 @media screen and (min-width: 320px) {
 }
