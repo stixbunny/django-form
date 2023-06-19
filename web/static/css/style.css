@@ -3,9 +3,8 @@
 
 :root {
   --bg-color: rgb(87, 117, 78);
-  --shadow-color: rgb(44, 59, 40)
+  --shadow-color: rgb(44, 59, 40);
 }
-
 body {
   box-sizing: border-box;
   margin: 0;
@@ -16,19 +15,16 @@ body {
   height: 100dvh;
   font-family: "Roboto";
 }
-
 .box {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   height: 100%;
 }
-
 header {
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0.5rem;
   flex: 0 1 auto;
 }
-
 #title {
   font-family: "Patua One";
   font-size: 4rem;
@@ -37,21 +33,17 @@ header {
   flex-direction: column;
   line-height: 90%;
 }
-
 #title-one {
   text-align: left;
 }
-
 #title-two {
   font-size: 6rem;
   line-height: 90%;
   text-align: center;
 }
-
 #title-three {
   text-align: right;
 }
-
 main {
   display: flex;
   flex: 1 1 auto;
@@ -60,12 +52,8 @@ main {
   max-width: min(80%, 500px);
   overflow-y: auto;
   margin: 0 auto;
+  padding: 1rem 0;
 }
-
-/* main > * + * {
-  margin: 1rem 1rem;
-} */
-
 .message {
   text-align: justify;
   background-color: aliceblue;
@@ -77,14 +65,12 @@ main {
   gap: 0.5rem;
   box-shadow: 0 0 10px var(--shadow-color);
 }
-
 .message-info {
   display: flex;
   justify-content: end;
   align-items: center;
   gap: 1rem;
 }
-
 .message-text {
   font-size: 1.1rem;
 }
@@ -94,12 +80,10 @@ main {
 .message-date {
   font-size: 0.8rem;
 }
-
 .anon {
   color: lightslategray;
   font-style: italic;
 }
-
 footer {
   display: flex;
   flex: 0 1 auto;
@@ -107,67 +91,55 @@ footer {
   margin: 0 auto;
   gap: 1rem;
   max-width: 500px;
-  /* height: fit-content; */
 }
-
 form {
   display: grid;
   gap: 0.6rem;
   padding: 0 0.5rem 0 0.5rem;
 }
-
 form label {
   margin-left: 1rem;
   font-size: 0.9rem;
   font-weight: 700;
   text-align: left;
 }
-
 .field-wrapper {
   display: grid;
 }
-
 textarea {
   resize: none;
-  font-family: 'Roboto';
+  font-family: "Roboto";
 }
-
-input, textarea, button {
+input,
+textarea,
+button {
   border-radius: 5px;
 }
-
 button {
   width: fit-content;
   justify-self: right;
 }
-
 footer > section:last-child {
-  font-family: 'Roboto';
+  font-family: "Roboto";
   font-size: 0.8rem;
   text-align: center;
   color: aliceblue;
   text-shadow: 2px 1px 5px black;
   margin-bottom: 1rem;
 }
-
 footer a {
   color: inherit;
   text-decoration: none;
 }
-
 footer a:hover {
   font-weight: 700;
 }
-
 footer a:hover:before {
-  content: '👉';
+  content: "👉";
 }
-
 footer a:hover:after {
-  content: '💯';
+  content: "💯";
 }
-
-
 @media screen and (min-width: 320px) {
 }
 @media screen and (min-width: 680px) {

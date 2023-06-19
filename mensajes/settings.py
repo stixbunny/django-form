@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gs3watq=8c&^5euvb4vwxrzp34+h6p4xrd=*+hp*7^(0!bidvy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','django-message-form-app.glitch.me']
+ALLOWED_HOSTS = ['localhost','127.0.0.1','django-message-form-app.glitch.me']
 
 
 # Application definition
