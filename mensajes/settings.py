@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from os import getenv
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,13 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gs3watq=8c&^5euvb4vwxrzp34+h6p4xrd=*+hp*7^(0!bidvy'
+SECRET_KEY = getenv('SECRET_KEY')
+#'django-insecure-gs3watq=8c&^5euvb4vwxrzp34+h6p4xrd=*+hp*7^(0!bidvy'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv('DEBUG', '0').lower() in ['true', 't', '1']
 
-ALLOWED_HOSTS = ['localhost','127.0.0.1','django-message-form-app.glitch.me']
-
+ALLOWED_HOSTS = getenv('ALLOWED_HOSTS').split(' ')
+#['localhost','127.0.0.1','django-message-form-app.glitch.me']
 
 # Application definition
 
@@ -75,11 +78,14 @@ WSGI_APPLICATION = 'mensajes.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    'default': dj_database_url.parse(getenv('DATABASE_URL'), conn_max_age=600),
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -117,6 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'uploads'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
